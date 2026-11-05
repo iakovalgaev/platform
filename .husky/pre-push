@@ -1,0 +1,8 @@
+set -eu
+
+base_ref="${HUSKY_BASE_REF:-origin/main}"
+
+echo "husky: pre-push (base: ${base_ref})" >&2
+
+pnpm turbo run typecheck --filter="...[${base_ref}]" --continue --output-logs=errors-only 1>&2
+pnpm turbo run check --filter="...[${base_ref}]" --continue --output-logs=errors-only 1>&2 -- --error-on-warnings

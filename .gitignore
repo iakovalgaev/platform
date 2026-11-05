@@ -1,0 +1,33 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Frameworks
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+
+# Environment & secrets
+.env
+.env*.local
+*.local
+*.pem
+
+# Logs
+*.log
+
+# Tool caches
+.cache/
+.turbo/
+
+# IDE settings
+.idea/
+.cursor/
+**/cursor-tmpl/
+
+# OS
+.DS_Store
+
+# Personal artifacts
+.temp/
+.specstory

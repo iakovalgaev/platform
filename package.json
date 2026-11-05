@@ -1,0 +1,40 @@
+{
+	"name": "platform",
+	"private": true,
+	"engines": {
+		"node": ">=24.0.0",
+		"pnpm": ">=12.8.0"
+	},
+	"packageManager": "pnpm@12.8.0",
+	"scripts": {
+		"dev": "turbo dev --parallel",
+		"build": "turbo build",
+		"build:packages": "turbo build:types -F=\"./packages/**\"",
+		"clean": "git clean -xdf node_modules",
+		"clean:workspaces": "turbo clean",
+		"check": "turbo check --continue --",
+		"check:fix": "turbo check --continue --cache=local: -- --write",
+		"lint:ws": "pnpm dlx sherif@latest",
+		"prepare": "husky",
+		"postinstall": "pnpm lint:ws",
+		"typecheck": "turbo typecheck",
+		"test": "turbo run test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "catalog:",
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@types/node": "catalog:",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.3",
+		"turbo": "^2.5.4",
+		"typescript": "catalog:",
+		"vite-tsconfig-paths": "catalog:",
+		"vitest": "catalog:"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,json,css}": [
+			"pnpm biome check --write --no-errors-on-unmatched"
+		]
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"name": "@acme/tribute-router",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "pnpm with-env tsx watch src/index.ts",
+		"build": "tsdown",
+		"start": "node dist/index.js",
+		"start:local": "pnpm with-env node dist/index.js",
+		"check": "biome check ./src",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"with-env": "dotenv -e ./.env --"
+	},
+	"dependencies": {
+		"fastify": "^5.6.0",
+		"pino": "catalog:pino",
+		"pino-loki": "catalog:pino",
+		"pino-pretty": "catalog:pino",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@acme/kit": "workspace:*",
+		"@acme/tsconfig": "workspace:*",
+		"@biomejs/biome": "catalog:",
+		"@types/node": "catalog:",
+		"dotenv-cli": "catalog:",
+		"tsdown": "catalog:",
+		"tsx": "catalog:",
+		"typescript": "catalog:",
+		"vite-tsconfig-paths": "catalog:",
+		"vitest": "catalog:"
+	}
+}

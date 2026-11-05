@@ -1,0 +1,28 @@
+packages:
+  - apps/*
+  - packages/*
+  - tooling/*
+
+catalog:
+  '@biomejs/biome': ^2.4.16
+  '@types/node': 22.18.3
+  dotenv-cli: ^8.0.0
+  es-toolkit: 1.41.0
+  tsdown: 0.15.1
+  tsx: ^4.20.5
+  typescript: ^5.8.3
+  vite-tsconfig-paths: ^5.1.4
+  vitest: ^3.2.4
+  zod: 4.1.11
+
+catalogs:
+  pino:
+    pino: 9.9.0
+    pino-loki: ^3.0.0
+    pino-pretty: 13.0.0
+
+overrides:
+  zod: 4.1.11
+
+allowBuilds:
+  esbuild: true
